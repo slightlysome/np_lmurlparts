@@ -1,0 +1,193 @@
+<h3>Plugin overview</h3>
+
+<p>
+The NP_LMURLParts plugin is a helper plugin that keep track of URL parts. It is used by several LM-plugins to handle URL parts. 
+An URL part is a string that is used as a part of an URL, and is unique for a blog or globally on a Nucleus site. 
+</p>
+
+<p>
+The main purpose for this plugin is to provide unique URL parts for the Fancier URL scheme and Compact URL scheme in the NP_LMFancierURL plugin. 
+Other plugins that want to utilize the NP_FancierURL plugin for parsing and generating URLs can register it's URL parts with this plugin.
+</p>
+
+<p>
+The plugin must be installed before any plugin that is dependant on it.
+</p>
+
+<h3>Installation</h3>
+
+<ul>
+<li>
+Upload the NP_LMURLParts.php file and the lmurlparts directory from the zip file to the Nucleus CMS plugins directory (nucleus/plugins) on your web server.
+</li>
+<li>
+Go to the Plugins page in the admin area. You should be able to select the plugin in the dropdown list under the "Install New Plugin" section and press the "Install Plugin" button.
+</li>
+</ul>
+
+<h3>Upgrade</h3>
+
+<ul>
+<li>
+Take a backup of the current plugin files. You will need these if you want to rollback to the previous version after the upgrade.
+</li>
+<li>
+Take a backup of the database used for you Nucleus installation.
+</li>
+<li>
+Replace the old plugin files with the new ones by uploading the NP_LMURLParts.php file 
+and the lmurlparts directory from the zip file to the Nucleus CMS plugins directory (nucleus/plugins) on your web server. Do not uninstall the plugin.
+</li>
+<li>
+Go to the Plugins page in the admin area and press the "Update subscription list" button.
+</li>
+<li>
+If a plugin data upgrade is needed, will an upgrade plugin data option be 
+available on the NP_LMURLParts plugin admin page. Choose this option to upgrade the plugin data.
+</li>
+<li>
+After the plugin data upgrade has been performed may a rollback option and a commit option be available on the NP_LMURLParts 
+plugin admin page. Not all upgrades support the rollback and commit option.
+</li>
+<li>
+If you are not pleased with the new version of the plugin you may use the rollback option to rollback the plugin data upgrade. 
+After the rollback of the plugin data upgrade you have to replace the new plugin files with the old plugin files.
+</li>
+<li>
+If you are pleased with the new version of the plugin you should use the commit option to commit the plugin data upgrade. 
+After the commit of the plugin data upgrade will any rollback and commit options disappear.
+</li>
+</ul>
+
+<h3>Configuration</h3>
+
+<p>
+The NP_LMURLParts plugin has the following options on the global level:
+</p>
+
+<ul>
+<li>
+<b>Delete NP_LMURLParts data tables on uninstall?</b> - Choose if all data should be deleted when the plugin is uninstalled.
+</li>
+<li>
+<b>Choose encoding</b> - Choose which encoding that should be used when making text URL friendly. 
+<ul>
+<li>
+<b>AUTO</b> - Use the encoding defined by the language used. This is the default value.
+</li>
+<li>
+<b>ISO-8859-1</b> - Use ISO-8859-1 encoding.
+</li>
+<li>
+<b>UTF-8</b> - Use UTF-8 encoding.
+</li>
+<li>
+<b>ASCII</b> - Use ASCII encoding.
+</li>
+</ul>
+</li>
+</ul>
+
+<h3>Usage</h3>
+
+<p>
+The URL parts and keywords are administered from the plugin admin page which can be accessed from either 
+the quick menu in the admin area, or from the admin link for the plugin in the plugin list. 
+A user can edit the parts and keywords for the blogs he is admin for. The blog super admin can edit global parts and keywords and the 
+parts and keywords for all blogs.
+</p>
+
+<p>
+In the admin area for the NP_LMURLParts plugin you first choose which blog you want to edit URL parts for. 
+If you are the admin of a single blog you will autmatically choose this blog for editing URL parts. 
+It you are a super admin you will also be able to choose to edit top level URL parts.
+</p>
+
+<p>
+You will get a list of URL part types to choose from. After you have choosen which URL part type you want to edit 
+you get a list of the defined URL parts for that type. 
+
+This list will show the names used in your blog for the items, categorys, archives and special skinparts and the currently 
+defined name to use in URLs to identify these. 
+</p>
+
+<p>
+The following operations can be used on an URL part:
+</p>
+
+<ul>
+<li>
+<b>Edit</b> - Edit the URL part. When you change a URL part manually will it also be locked. The URL part must be URL friendly and contain 
+only lowercase 7-bit letters (a-z), numbers (0-9) and the minus character. Multipart URL parts can also include / characters, and must start with a / character.
+</li>
+<li>
+<b>Lock</b> - Locks the URL part so any updates to the names of an item, category, archive or special skinparts won't change the URL part that identifies it.
+</li>
+<li>
+<b>UnLock</b> - Unlocks the URL part so any updates to the names of an item, category, archive or special skinparts will update the URL part that identifies it.
+</li>
+</ul>
+
+<p>
+For blogs and global URL parts you can also choose to edit URL part keywords. 
+</p>
+
+<h3>Support and Bug reports</h3>
+
+<p>
+For additional support and/or bug reports please use the Nucleus forum 
+<a href="http://forum.nucleuscms.org/viewtopic.php?t=21132">plugin announce thread</a> 
+or the <a href="http://www.slightlysome.net/nucleus-plugins/np_lmurlparts">plugin page</a> comment section.
+</p>
+
+<h3>Compability</h3>
+
+<p>
+This version of the NP_LMURLParts is tested against version 3.64 of Nucleus CMS. Minimum version of Nucleus CMS needed for using the plugin is 3.50. 
+</p>
+
+<h3>Version History</h3>
+
+<ul>
+<li><b>v1.0.0 2011-06-27:</b> by Leo (http://www.slightlysome.net)</li>
+<ul>
+<li>Initial version released with NP_LMFancierURL v2.0</li>
+</ul>
+<li><b>v1.0.1 2011-08-06:</b> by Leo (http://www.slightlysome.net)</li>
+<ul>
+<li>Super admin could not choose to edit top level parts if the site only had one blog.</li>
+<li>New error message when the edited urlpart is a valid number (not a legal urlpart).</li>
+<li>Released with NP_LMFancierURL v2.0.1</li>
+</ul>
+<li><b>v1.1.0 2011-08-27:</b> by Leo (http://www.slightlysome.net)</li>
+<ul>
+<li>The plugin is now released separately from NP_LMFancerURL.</li> 
+<li>Handling multipart urlparts. Multipart urlparts can contain "/", otherwise the same rules as the normal urlparts.</li>
+<li>Implemented my suggested <a href="http://forum.nucleuscms.org/viewtopic.php?t=20531">plugin data upgrade handling</a>. 
+The plugin does the upgrade handling by itself, and is not dependent of any core changes or other handling plugins.</li>
+<li>Should now handle missing mbstring PHP extension which gave the blank page on the LMFancierURL installation for some.</li>
+<li>Implemented my suggested <a href="http://forum.nucleuscms.org/viewtopic.php?t=20556">AdminPluginNotification event</a> in the plugin. 
+Used AdminPrePageFoot event to trigger the AdminPluginNotification event. Will show the notification on the bottom of the admin pages instead on the top as suggested. 
+Used for notification on upgrade handling status and missing mbstring PHP extension.</li>
+<li>Plugin help is now available for all who have access to plugin admin page.</li>
+<li>Missing blog level change link on admin page when only one blog on blogsite.</li>
+<li>Made the plugin admin page styling more similar to the admin area default styling.</li>
+</ul>
+<li><b>v1.1.1 2012-06-23:</b> by Leo (http://www.slightlysome.net)</li>
+<ul>
+<li>Minor changes to support a new version of NP_LMFanicerURL.</li> 
+</ul>
+<li><b>v1.1.2 2013-05-20:</b> by Leo (http://www.slightlysome.net)</li>
+<ul>
+<li>Changes for PHP 5.4.</li>
+<li>Fixed bug when making string url friendly when the first character is a 8 bit character.</li>
+<li>Removed the need for mbstring PHP extension. Uses encoding defined for the current language.</li>
+</ul>
+</ul>
+
+<h3>Download</h3>
+
+<p>
+<a href="http://www.slightlysome.net/download/NP_LMURLParts_v112.zip" title="Download NP_LMURLParts_v112.zip">Download NP_LMURLParts v1.1.2</a>. 
+The latest version of the NP_LMURLParts plugin can be downloaded from the NP_LMURLParts <a href="http://www.slightlysome.net/nucleus-plugins/np_lmurlparts">plugin page</a>.
+</p>
